@@ -14,4 +14,6 @@ export const api = {
   startJourney(payload) { return http('/api/journey', { method: 'POST', body: JSON.stringify(payload) }) },
   recordInteraction(payload) { return http('/api/interaction', { method: 'POST', body: JSON.stringify(payload) }) },
   analyze(journey_id) { return http('/api/analyze', { method: 'POST', body: JSON.stringify({ journey_id }) }) },
+  listTeas() { return http('/api/teas') },
+  getTea(key) { return http(`/api/teas/${encodeURIComponent(key)}`) },
 }
